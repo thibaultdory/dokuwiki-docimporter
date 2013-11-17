@@ -1,0 +1,7 @@
+base   docimporter
+author Thibault Dory
+email  thibault.dory@marginweb.com
+date   2013-11-16
+name   docimporter plugin
+desc   Import Ms Word documents to Dokuwiki
+url    http://www.marginweb.com/dokuwiki
