@@ -83,7 +83,7 @@ function convert_table($table) {
 function get_images_from_html($myHTMLContent, $myWikiContent){
 
       #Detect if an image is present in the header, if it is the case, start taking picture into account one picture farther
-      $imageInHeader = preg_match("/<DIV TYPE=HEADER>.*<IMG(.*)>.*<\/DIV>/s",  $myHTMLContent);
+      $imageInHeader = preg_match("/<DIV TYPE=HEADER>.*<IMG(.*)>.*<\/DIV>/is",  $myHTMLContent);
       if ($imageInHeader) {
         $imageOffset = 1;
       } else {
@@ -92,7 +92,7 @@ function get_images_from_html($myHTMLContent, $myWikiContent){
 
 
       #Get all the images names, width and height
-      preg_match_all("/<IMG SRC=\"(.*?)\".*ALIGN=(\S{1,}).*WIDTH=(\S{1,}).*HEIGHT=(\S{1,}).*?>/", $myHTMLContent, $image_tags);
+      preg_match_all("/<IMG SRC=\"(.*?)\".*ALIGN=(\S{1,}).*WIDTH=(\S{1,}).*HEIGHT=(\S{1,}).*?>/i", $myHTMLContent, $image_tags);
 
       $image_patterns = array();
       $image_names = array();
