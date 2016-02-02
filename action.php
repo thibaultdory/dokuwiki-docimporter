@@ -15,7 +15,7 @@ if(!defined('DOKU_INC')) die();
 if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC . 'lib/plugins/');
 
 class action_plugin_docimporter extends DokuWiki_Action_Plugin {
-  function register($controller) {
+  function register(Doku_Event_Handler $controller) {
     $controller->register_hook('ACTION_ACT_PREPROCESS', 'BEFORE', $this, '_importer', array());
   }
 
